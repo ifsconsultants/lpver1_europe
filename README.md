@@ -5,12 +5,12 @@ Event: 10 November 2026, 10:00 AM to 5:00 PM IST.
 ## What is already coded
 - Responsive landing page with all 8 admission-card images EMBEDDED in the HTML (no image folder needed).
 - Real Netlify Forms registration form with validation, consent, honeypot, and UTM tracking.
-- Registration redirect to `thank-you.html`.
+- Registration redirects to `/thank-you/` (served from `public/thank-you/index.html`).
 - Netlify stores verified registrations in Site > Forms; Gmail notifications can be turned on in the Netlify UI.
 - A server-side Netlify form event function that sends automated WhatsApp messages using Meta WhatsApp Cloud API, if enabled.
 
 ## OPTION A: easiest Netlify Drop (website + submissions + Gmail)
-1. Download the companion `IFS_Europe_Fair_Netlify_Drop.zip`, extract it.
+1. For a static-only manual upload, deploy the contents of the `public/` folder.
 2. Sign in at https://app.netlify.com/drop and upload the extracted folder containing index.html.
 3. In Netlify, open the site > Forms > Enable form detection. If not already enabled, redeploy after enabling.
 4. Go to Forms > Submission notifications > Add notification > Email notification. Enter your Gmail address and select form `ifs-europe-virtual-fair`.
@@ -51,3 +51,21 @@ IMPORTANT: This is a STATIC deploy. It does not activate automatic WhatsApp mess
 - No Gmail? Configure submission notification to the correct Gmail and check spam.
 - No WhatsApp? Verify sender phone ID, permanent access token, approved template, opt-in, and Netlify function logs. Check Meta API permissions.
 - If you deploy via basic Netlify Drop without a build, the WhatsApp function will not deploy. Use the connected GitHub project deployment for the function.
+
+## 404 fix
+On your GitHub-connected Netlify project, the publish directory must be `public` (not `.` or `REPOSITORY_FILES/public`). Do not add another parent folder in the repository. Check the published deploy file explorer for `index.html` at its root.
+
+## IMPORTANT: 404 on /thank-you.html after form submission (fixed in this release)
+This version fixes a broken form success URL and includes a real directory-index success page.
+- Registration form submits to `/thank-you/`.
+- The confirmation page is at `public/thank-you/index.html`.
+- A legacy link to `/thank-you.html` redirects to `/thank-you/` via `_redirects`.
+- Keep your Netlify **publish directory** set to `public`; leave the build command blank.
+- Upload the **contents** of this project to the *root* of your GitHub repository, preserving directories.
+- Commit and wait until the newest production deploy shows **Published** in Netlify.
+- Open `https://YOUR-SITE.netlify.app/thank-you/` directly before submitting a test registration; it should show the confirmation page.
+- In Netlify > Deploys > latest production deploy > file explorer, verify `thank-you/index.html` appears alongside `index.html`.
+- In Netlify > Forms, ensure form detection is enabled. If it was just turned on, deploy again.
+- Send a real test registration, then verify it appears in **Forms > ifs-europe-virtual-fair > Verified**. A success page opening alone is not proof of saved submission.
+- Gmail emails require enabling a Form submission email notification in Netlify.
+- WhatsApp requires environment variables, Meta-approved template, opt-in and appropriate Netlify function deployment.

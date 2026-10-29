@@ -1,0 +1,23 @@
+IFS Europe Virtual Fair — Thank-you 404 fixed
+
+This is the GitHub-connected Netlify project, not the Netlify Drop folder.
+
+UPLOAD TO YOUR GITHUB REPOSITORY ROOT:
+  public/
+  netlify/
+  netlify.toml
+  README.md
+
+NETLIFY BUILD SETTINGS:
+  Publish directory: public
+  Build command: (blank)
+  Functions directory: netlify/functions
+
+FIXED SUCCESS PAGE:
+  Public URL: /thank-you/
+  Page on disk: public/thank-you/index.html
+
+AFTER DEPLOY:
+  1. Open https://YOUR-SITE.netlify.app/thank-you/
+  2. In Netlify Forms, enable form detection and verify registration submissions.
+  3. Configure Gmail and WhatsApp separately as described in README.md.
