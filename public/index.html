@@ -71,10 +71,10 @@ nav{min-height:78px}
 @media (prefers-reduced-motion:reduce){.admit-orbit-card{transition:none}.sky-airplane{animation:none}}
 
 /* Demo-only admission portrait refinements */
-.admit-card-cover img{object-position:center 39%;border-radius:12px;}.admit-poster{position:relative;width:100%;height:100%;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #ffffffea;box-shadow:0 18px 44px #022f5d63}.admit-poster img{display:block;width:100%;height:100%;object-fit:cover}.admit-card-badge{position:absolute;left:12px;top:12px;background:#ffffffea;color:#143D63;border:1px solid #dbe7f2;padding:6px 10px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 6px 16px #0d35591a}.poster-fallback{display:none;position:absolute;top:48%;left:0;right:0;text-align:center;color:#143D63;font-size:12px;font-weight:700}.image-unavailable .poster-fallback{display:block}.admit-card-glow{position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(180deg,transparent,rgba(6,29,53,.18));pointer-events:none}.sky-demo-disclaimer{color:#dcecff;font-size:12px;opacity:.92;max-width:460px}.sky-demo-disclaimer b{color:#ffda56}
+.admit-card-cover img{object-position:center 39%;border-radius:12px;}.admit-poster{position:relative;width:100%;height:100%;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #ffffffea;box-shadow:0 18px 44px #022f5d63}.admit-poster img{display:block;width:100%;height:100%;object-fit:cover}.admit-card-badge{position:absolute;left:12px;top:12px;background:#ffffffea;color:#143D63;border:1px solid #dbe7f2;padding:6px 10px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 6px 16px #0d35591a}.poster-fallback{display:none;position:absolute;top:48%;left:0;right:0;text-align:center;color:#143D63;font-size:12px;font-weight:700}.image-unavailable .poster-fallback{display:block}.admit-card-glow{position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(180deg,transparent,rgba(6,29,53,.18));pointer-events:none}
 .admit-status{background:#fef4d2;color:#875c0b;letter-spacing:.015em;font-size:9px;white-space:nowrap}
-.sky-demo-disclaimer{position:relative;z-index:8;text-align:center;font-size:11px;font-weight:700;color:#f9ffff;background:#0e549185;border:1px solid #ffffff6b;border-radius:30px;max-width:610px;padding:7px 12px;margin:3px auto 5px}
-@media(max-width:590px){.sky-demo-disclaimer{font-size:9px;max-width:310px;margin-top:0}.admit-status{font-size:8px}}
+
+@media(max-width:590px){.admit-status{font-size:8px}}
 
 
 /* IFS Challenges section: editorial scrapbook layout */
@@ -144,7 +144,7 @@ nav{min-height:78px}
   <button type="button" class="orbit-speed-choice" data-speed="normal" aria-pressed="false">Normal</button>
   <button type="button" class="orbit-speed-choice" data-speed="fast" aria-pressed="false">Fast</button>
 </div>
-<div class="sky-admit-stage"><div aria-label="IFS university admits rotating showcase" aria-roledescription="carousel" class="admit-orbit" id="admit-orbit" role="region" tabindex="0"></div></div><div aria-label="Select an admit" class="orbit-dots" id="orbit-dots"></div><p class="sky-demo-disclaimer">Featured recent IFS admit cards are rotating here. You can replace, reorder, or add more cards anytime.</p><div class="sky-hero-end"></div></div></section><div class="count-band wrap"><div class="count-inner"><div><strong>🚀 Your journey starts in</strong><small>Countdown to the virtual fair • 10 November 2026, 10:00 AM IST</small></div><div aria-label="Countdown until event" class="timer"><div class="timebox"><b id="dd">--</b><small>Days</small></div><div class="timebox"><b id="hh">--</b><small>Hours</small></div><div class="timebox"><b id="mm">--</b><small>Min</small></div><div class="timebox"><b id="ss">--</b><small>Sec</small></div></div><a class="btn small" href="#register">Join Free ↗</a></div></div>
+<div class="sky-admit-stage"><div aria-label="IFS university admits rotating showcase" aria-roledescription="carousel" class="admit-orbit" id="admit-orbit" role="region" tabindex="0"></div></div><div aria-label="Select an admit" class="orbit-dots" id="orbit-dots"></div><div class="sky-hero-end"></div></div></section><div class="count-band wrap"><div class="count-inner"><div><strong>🚀 Your journey starts in</strong><small>Countdown to the virtual fair • 10 November 2026, 10:00 AM IST</small></div><div aria-label="Countdown until event" class="timer"><div class="timebox"><b id="dd">--</b><small>Days</small></div><div class="timebox"><b id="hh">--</b><small>Hours</small></div><div class="timebox"><b id="mm">--</b><small>Min</small></div><div class="timebox"><b id="ss">--</b><small>Sec</small></div></div><a class="btn small" href="#register">Join Free ↗</a></div></div>
 
 <section aria-labelledby="challenges-title" class="section ifs-challenges" id="problems">
 <div class="challenge-shell">
@@ -190,7 +190,7 @@ nav{min-height:78px}
    <div class="pill"><span class="dot"></span> FREE REGISTRATION</div>
    <h3>Reserve your free seat</h3>
    <p>Complete this short form. We'll send event instructions using the contact details you provide.</p>
-   <form name="ifs-europe-virtual-fair" id="ifs-registration-form" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" accept-charset="UTF-8">
+   <form name="ifs-europe-virtual-fair" id="ifs-registration-form" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" accept-charset="UTF-8">
      <input type="hidden" name="form-name" value="ifs-europe-virtual-fair">
      <p class="fair-honeypot" aria-hidden="true"><label>Leave this blank <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
      <input type="hidden" name="event" value="IFS Europe Study Abroad Virtual Fair 2026">
