@@ -127,7 +127,47 @@ nav{min-height:78px}
 .fair-honeypot{position:absolute!important;opacity:0!important;width:1px;height:1px;overflow:hidden;pointer-events:none}
 .fair-inbox-trust{font-size:12px;line-height:1.6;padding:16px 19px;border:1px solid #ffffff2e;background:#ffffff0c;border-radius:12px;margin-top:23px;color:#d5e7f7}
 @media(max-width:580px){.fair-fields{grid-template-columns:1fr}.fair-wide{grid-column:auto}.fair-form-panel{padding:23px 18px!important}.fair-field input,.fair-field select{min-height:50px}}
-@media(max-width:950px){.solution-head{grid-template-columns:1fr}.solution-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.solution-cta{justify-self:start}}@media(max-width:590px){.solution-grid{grid-template-columns:1fr}.solution-card{min-height:auto}.solution-head{gap:18px}.solution-copy h2{font-size:clamp(30px,8vw,44px)}}</style><style id="ifs-14-destinations-style">
+@media(max-width:950px){.solution-head{grid-template-columns:1fr}.solution-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.solution-cta{justify-self:start}}@media(max-width:590px){.solution-grid{grid-template-columns:1fr}.solution-card{min-height:auto}.solution-head{gap:18px}.solution-copy h2{font-size:clamp(30px,8vw,44px)}}
+/* IFS latest Google reviews scrolling marquee */
+.ifs-reviews-section{background:linear-gradient(180deg,#f7f9fe 0%,#eef3fa 100%);overflow:hidden}
+.ifs-reviews-header{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:36px;align-items:center;margin-bottom:29px}
+.ifs-reviews-header h2{font-size:clamp(32px,4.3vw,58px);margin-bottom:13px}
+.ifs-reviews-header h2 span{color:#143D63}.ifs-reviews-header .sub{max-width:640px;line-height:1.65}
+.ifs-reviews-rating{border:1px solid #e1e9f3;background:#fff;border-radius:20px;padding:21px 22px;box-shadow:0 12px 32px #143d630c}
+.ifs-reviews-rating-label{display:block;font-size:11px;letter-spacing:.09em;font-weight:900;color:#536b7e;text-transform:uppercase}
+.ifs-reviews-score{margin-top:7px;font:800 49px/1 Outfit,Arial,sans-serif;letter-spacing:-.06em;color:#0c2844}
+.ifs-reviews-score span{font-size:20px;color:#8292a6;letter-spacing:0}
+.ifs-reviews-stars{font-size:17px;letter-spacing:2px;color:#e3aa16;margin:6px 0 4px}.ifs-reviews-rating small{font-size:11px;color:#607287}
+.ifs-marquee-bleed{width:100%;position:relative;margin-top:9px}
+.ifs-marquee-bleed:before,.ifs-marquee-bleed:after{content:'';position:absolute;z-index:2;top:0;bottom:0;width:min(7vw,90px);pointer-events:none}
+.ifs-marquee-bleed:before{left:0;background:linear-gradient(90deg,#f3f6fc,transparent)}
+.ifs-marquee-bleed:after{right:0;background:linear-gradient(270deg,#f1f5fb,transparent)}
+.ifs-marquee-frame{overflow:hidden;padding:9px 0 18px}
+.ifs-review-track{display:flex;width:max-content;animation:ifs-review-marquee 60s linear infinite;will-change:transform}
+.ifs-review-group{display:flex;align-items:stretch;gap:16px;padding-right:16px;flex-shrink:0}
+@keyframes ifs-review-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ifs-marquee-frame:hover .ifs-review-track,.ifs-marquee-frame:focus-within .ifs-review-track,.ifs-marquee-frame.is-paused .ifs-review-track{animation-play-state:paused}
+.ifs-review-card{background:#fff;border:1px solid #e1e8f1;box-shadow:0 6px 24px #143d6310;border-radius:19px;width:315px;min-height:315px;padding:21px 20px 18px;flex-shrink:0;display:flex;flex-direction:column}
+.ifs-review-top{display:flex;align-items:center;gap:10px;min-width:0}
+.ifs-review-avatar{width:38px;height:38px;flex-shrink:0;border-radius:12px;background:#e8f1fc;color:#143d63;display:grid;place-items:center;font:900 13px Outfit,Arial,sans-serif}
+.ifs-review-who{min-width:0;flex:1}.ifs-review-who strong{display:block;font-size:12px;line-height:1.25;color:#0c2844}
+.ifs-review-who span{font-size:10px;line-height:1.4;color:#8391a3;white-space:normal}
+.ifs-review-source{font:900 19px Arial,sans-serif;color:#4285f4;align-self:flex-start}
+.ifs-review-card h3{font:800 20px/1.14 Outfit,Arial,sans-serif;letter-spacing:-.025em;color:#12344f;margin:24px 0 10px}
+.ifs-review-card p{font-size:13px;line-height:1.6;color:#53677d;margin:0 0 23px}
+.ifs-review-bottom{margin-top:auto;display:flex;align-items:end;justify-content:space-between;gap:10px;padding-top:14px;border-top:1px solid #edf1f6}
+.ifs-review-bottom span{font-size:10px;font-weight:800;color:#6d7e91;text-transform:uppercase;letter-spacing:.025em;line-height:1.3;max-width:62%}
+.ifs-review-bottom a{font-size:11px;font-weight:800;color:#143d63;text-decoration:none;white-space:nowrap}.ifs-review-bottom a:hover{text-decoration:underline}
+.ifs-reviews-after{margin-top:2px}.ifs-reviews-status-row{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid #dce5ef}
+.ifs-reviews-status-row strong{color:#173d60;font-size:13px}.ifs-reviews-status-row span{font-size:11px;color:#708295}
+.ifs-review-toggle{border:1px solid #c9d8e8;border-radius:999px;background:#fff;color:#143D63;padding:9px 16px;cursor:pointer;font-weight:800;font-size:12px;white-space:nowrap}
+.ifs-review-toggle:focus-visible{outline:3px solid #f8c21c}.ifs-reviews-footer{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:22px}
+.ifs-reviews-footer p{max-width:720px;font-size:11px;color:#708195;line-height:1.65;margin:0}
+.ifs-reviews-footer .btn{flex-shrink:0;padding:13px 18px}
+@media(max-width:650px){.ifs-reviews-header{grid-template-columns:1fr;gap:20px}.ifs-reviews-rating{width:min(100%,280px)}.ifs-review-card{width:280px;min-height:322px}.ifs-reviews-footer{flex-direction:column;align-items:flex-start;gap:16px}.ifs-review-track{animation-duration:70s}.ifs-marquee-bleed:before,.ifs-marquee-bleed:after{width:16px}}
+@media(prefers-reduced-motion:reduce){.ifs-review-track{animation:none}.ifs-marquee-frame{overflow-x:auto;scroll-snap-type:x proximity}.ifs-review-card{scroll-snap-align:start}}
+
+</style><style id="ifs-14-destinations-style">
 /* 14 destinations: design system matches the existing IFS palette. */
 #countries .countries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 #countries .destination-14{min-height:292px;border-radius:22px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;isolation:isolate;background:#102e4c;color:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:0 12px 28px rgba(16,44,72,.09);transition:transform .3s ease,box-shadow .3s ease}
@@ -272,48 +312,146 @@ nav{min-height:78px}
 </div></div></section>
 <section class="section germany" id="germany"><div class="wrap split"><div><div class="eyebrow">04 / Germany spotlight</div><h2>World-class education.<br/><span style="color:#F8C21C">Without sky-high tuition?</span></h2><p class="sub">Many German public universities offer tuition-free programmes. Learn where exceptions apply, what admission involves and how to budget beyond tuition.</p><div class="check"><span>✓</span> Understand public university tuition policies</div><div class="check"><span>✓</span> Explore English-taught programme possibilities</div><div class="check"><span>✓</span> Learn about eligibility, finances and visa documents</div><a class="btn" href="#register" style="margin-top:12px">Explore Germany at the Fair ↗</a><div class="note">Tuition and eligibility vary by institution, state, programme and citizenship. Semester contributions and living expenses still apply.</div></div><div class="germany-visual"><div class="bigflag">🇩🇪</div><b>€0*</b><div style="font:800 25px Outfit">Tuition at many public programmes</div><small style="margin-top:12px">*Not all universities or programmes qualify</small></div></div></section>
 <section class="section ifs-reviews-section" id="success" aria-labelledby="ifs-reviews-title">
-  <div class="wrap">
-    <div class="ifs-reviews-header">
-      <div>
-        <div class="eyebrow">05 / Student success · Google reviews</div>
-        <h2 id="ifs-reviews-title">Real experiences.<br/><span>Real student voices.</span></h2>
-        <p class="sub">See what students say about guidance with university applications, admissions and visa preparation.</p>
-      </div>
-      <div class="ifs-reviews-rating" aria-label="IFS Google Business Profile rating 4.9 out of 5">
-        <span class="ifs-reviews-rating-label">Google Business Profile</span>
-        <div class="ifs-reviews-score">4.9<span>/5</span></div>
-        <div class="ifs-reviews-stars" aria-hidden="true">★★★★★</div>
-        <small>600+ public Google ratings*</small>
-      </div>
-    </div>
-    <div class="ifs-reviews-grid">
-      <article class="ifs-review-card" aria-label="Review summary by Sayak Chakraborty">
-    <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">SC</div><div class="ifs-review-who"><strong>Sayak Chakraborty</strong><span>Google review · 1 Aug 2025</span></div><span class="ifs-review-source" aria-label="Google">G</span></div>
-    <h3>Support through every stage</h3>
-    <p>Described patient, personalised guidance from university selection through visa approval, with timely support along the way.</p>
-    <div class="ifs-review-bottom"><span>University selection &amp; visa guidance</span><a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer" aria-label="Read source for Sayak Chakraborty's review">Source ↗</a></div>
-</article><article class="ifs-review-card" aria-label="Review summary by Yasaswini Yashu">
-    <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">YY</div><div class="ifs-review-who"><strong>Yasaswini Yashu</strong><span>Google review · 29 Jul 2025</span></div><span class="ifs-review-source" aria-label="Google">G</span></div>
-    <h3>A more organised journey</h3>
-    <p>Appreciated help with university shortlisting, applications and payment steps, as well as clear communication and regular updates.</p>
-    <div class="ifs-review-bottom"><span>Application assistance</span><a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer" aria-label="Read source for Yasaswini Yashu's review">Source ↗</a></div>
-</article><article class="ifs-review-card" aria-label="Review summary by Nanda Siddhardha">
-    <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">NS</div><div class="ifs-review-who"><strong>Nanda Siddhardha</strong><span>Google review · 3 Jul 2025</span></div><span class="ifs-review-source" aria-label="Google">G</span></div>
-    <h3>Personalised admissions guidance</h3>
-    <p>Credited IFS counsellors for thoughtful feedback, encouragement and continued help while securing a university admission.</p>
-    <div class="ifs-review-bottom"><span>Admission guidance</span><a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer" aria-label="Read source for Nanda Siddhardha's review">Source ↗</a></div>
-</article><article class="ifs-review-card" aria-label="Review summary by Vishal Reddy">
-    <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">VR</div><div class="ifs-review-who"><strong>Vishal Reddy</strong><span>Google review · 13 Jun 2025</span></div><span class="ifs-review-source" aria-label="Google">G</span></div>
-    <h3>Confidence before the interview</h3>
-    <p>Highlighted approachable counsellors, regular follow-ups and mock visa interview sessions that helped build confidence.</p>
-    <div class="ifs-review-bottom"><span>Visa interview preparation</span><a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer" aria-label="Read source for Vishal Reddy's review">Source ↗</a></div>
-</article>
-    </div>
-    <div class="ifs-reviews-footer">
-      <p>Review summaries are paraphrased for readability and attributed to the original reviewers. Published dates shown above. *Rating and review volume can change.</p>
-      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=IFS%20Abroad%20Education%20Consultants&query_place_id=ChIJr3X5mSNDOToRz2NjesxklVI" target="_blank" rel="noopener noreferrer">Read Reviews on Google ↗</a>
-    </div>
+ <div class="wrap">
+  <div class="ifs-reviews-header">
+   <div>
+    <div class="eyebrow">05 / Student success · Google reviews</div>
+    <h2 id="ifs-reviews-title">Real experiences.<br><span>Real student voices.</span></h2>
+    <p class="sub">Hear from students about university applications, counselling and visa preparation.</p>
+   </div>
+   <div class="ifs-reviews-rating" aria-label="Rating 4.9 out of 5 from 573 publicly mirrored Google reviews">
+     <span class="ifs-reviews-rating-label">Google reviews</span>
+     <div class="ifs-reviews-score" id="ifs-review-score">4.9<span>/5</span></div>
+     <div class="ifs-reviews-stars" aria-hidden="true">★★★★★</div>
+     <small id="ifs-review-count">573 public reviews · Mirrored by Trustindex</small>
+   </div>
   </div>
+ </div>
+ <div class="ifs-marquee-bleed">
+  <div class="ifs-marquee-frame" id="ifs-review-frame" aria-label="Student reviews scrolling from right to left">
+   <div class="ifs-review-track" id="ifs-review-track">
+    <div class="ifs-review-group" id="ifs-review-original"><article class="ifs-review-card" aria-label="Review summary by Saniya Khanam">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">SK</div>
+          <div class="ifs-review-who"><strong>Saniya Khanam</strong><span>Google-sourced · <time datetime="2025-08-16">16 Aug 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>A positive consultancy experience</h3>
+        <p>Shared appreciation for the overall IFS consultancy experience.</p>
+        <div class="ifs-review-bottom"><span>Student experience</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article>
+<article class="ifs-review-card" aria-label="Review summary by Sayak Chakraborty">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">SC</div>
+          <div class="ifs-review-who"><strong>Sayak Chakraborty</strong><span>Google-sourced · <time datetime="2025-08-01">1 Aug 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>Guidance from selection to visa</h3>
+        <p>Praised timely, personalised support with university selection, applications and visa approval.</p>
+        <div class="ifs-review-bottom"><span>Admissions &amp; visa</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article>
+<article class="ifs-review-card" aria-label="Review summary by Mohammad Sufiyaan Khan">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">MS</div>
+          <div class="ifs-review-who"><strong>Mohammad Sufiyaan Khan</strong><span>Google-sourced · <time datetime="2025-07-30">30 Jul 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>Patient, step-by-step support</h3>
+        <p>Highlighted thoughtful programme shortlisting, organised applications and clear visa guidance, especially from Zarina.</p>
+        <div class="ifs-review-bottom"><span>University &amp; visa assistance</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article>
+<article class="ifs-review-card" aria-label="Review summary by Yasaswini Yashu">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">YY</div>
+          <div class="ifs-review-who"><strong>Yasaswini Yashu</strong><span>Google-sourced · <time datetime="2025-07-29">29 Jul 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>Consistent updates and guidance</h3>
+        <p>Appreciated help with university choices, applications, payments and regular communication from the IFS team.</p>
+        <div class="ifs-review-bottom"><span>Application coordination</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article>
+<article class="ifs-review-card" aria-label="Review summary by Kunwar Aditya Singh">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">KA</div>
+          <div class="ifs-review-who"><strong>Kunwar Aditya Singh</strong><span>Google-sourced · <time datetime="2025-07-22">22 Jul 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>Support at every step</h3>
+        <p>Thanked the IFS staff and Pradeep for support throughout the university application journey.</p>
+        <div class="ifs-review-bottom"><span>Application assistance</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article>
+<article class="ifs-review-card" aria-label="Review summary by Nanda Siddhardha">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">NS</div>
+          <div class="ifs-review-who"><strong>Nanda Siddhardha</strong><span>Google-sourced · <time datetime="2025-07-03">3 Jul 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>Support with university admission</h3>
+        <p>Credited Zareena and Rama Raju for personalised attention, useful feedback and support in securing university admission.</p>
+        <div class="ifs-review-bottom"><span>Admission guidance</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article></div>
+    <div class="ifs-review-group" aria-hidden="true" id="ifs-review-clone"><article class="ifs-review-card" aria-label="Review summary by Saniya Khanam">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">SK</div>
+          <div class="ifs-review-who"><strong>Saniya Khanam</strong><span>Google-sourced · <time datetime="2025-08-16">16 Aug 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>A positive consultancy experience</h3>
+        <p>Shared appreciation for the overall IFS consultancy experience.</p>
+        <div class="ifs-review-bottom"><span>Student experience</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article>
+<article class="ifs-review-card" aria-label="Review summary by Sayak Chakraborty">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">SC</div>
+          <div class="ifs-review-who"><strong>Sayak Chakraborty</strong><span>Google-sourced · <time datetime="2025-08-01">1 Aug 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>Guidance from selection to visa</h3>
+        <p>Praised timely, personalised support with university selection, applications and visa approval.</p>
+        <div class="ifs-review-bottom"><span>Admissions &amp; visa</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article>
+<article class="ifs-review-card" aria-label="Review summary by Mohammad Sufiyaan Khan">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">MS</div>
+          <div class="ifs-review-who"><strong>Mohammad Sufiyaan Khan</strong><span>Google-sourced · <time datetime="2025-07-30">30 Jul 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>Patient, step-by-step support</h3>
+        <p>Highlighted thoughtful programme shortlisting, organised applications and clear visa guidance, especially from Zarina.</p>
+        <div class="ifs-review-bottom"><span>University &amp; visa assistance</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article>
+<article class="ifs-review-card" aria-label="Review summary by Yasaswini Yashu">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">YY</div>
+          <div class="ifs-review-who"><strong>Yasaswini Yashu</strong><span>Google-sourced · <time datetime="2025-07-29">29 Jul 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>Consistent updates and guidance</h3>
+        <p>Appreciated help with university choices, applications, payments and regular communication from the IFS team.</p>
+        <div class="ifs-review-bottom"><span>Application coordination</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article>
+<article class="ifs-review-card" aria-label="Review summary by Kunwar Aditya Singh">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">KA</div>
+          <div class="ifs-review-who"><strong>Kunwar Aditya Singh</strong><span>Google-sourced · <time datetime="2025-07-22">22 Jul 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>Support at every step</h3>
+        <p>Thanked the IFS staff and Pradeep for support throughout the university application journey.</p>
+        <div class="ifs-review-bottom"><span>Application assistance</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article>
+<article class="ifs-review-card" aria-label="Review summary by Nanda Siddhardha">
+        <div class="ifs-review-top"><div class="ifs-review-avatar" aria-hidden="true">NS</div>
+          <div class="ifs-review-who"><strong>Nanda Siddhardha</strong><span>Google-sourced · <time datetime="2025-07-03">3 Jul 2025</time></span></div>
+          <span class="ifs-review-source" aria-label="Google">G</span></div>
+        <h3>Support with university admission</h3>
+        <p>Credited Zareena and Rama Raju for personalised attention, useful feedback and support in securing university admission.</p>
+        <div class="ifs-review-bottom"><span>Admission guidance</span>
+          <a href="https://www.trustindex.io/reviews/www.ifsconsultants.in" target="_blank" rel="noopener noreferrer">Review source ↗</a></div>
+      </article></div>
+   </div>
+  </div>
+ </div>
+ <div class="wrap ifs-reviews-after">
+  <div class="ifs-reviews-status-row">
+   <div><strong id="ifs-reviews-status">Most recent publicly verifiable reviews</strong><br>
+    <span id="ifs-reviews-explainer">Latest shown: 16 Aug 2025 · Sorted newest first in the public source</span></div>
+   <button class="ifs-review-toggle" id="ifs-review-toggle" type="button" aria-pressed="false" aria-label="Pause scrolling reviews">Ⅱ Pause</button>
+  </div>
+  <div class="ifs-reviews-footer">
+    <p id="ifs-reviews-note">Summaries are paraphrased and attributed. The publicly accessible mirror may not contain the most recent Google reviews. Automatic refresh requires Google Places credentials; otherwise these dated reviews remain visible.</p>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=IFS%20Abroad%20Education%20Consultants&query_place_id=ChIJr3X5mSNDOToRz2NjesxklVI" target="_blank" rel="noopener noreferrer">Read Reviews on Google ↗</a>
+  </div>
+ </div>
 </section>
 <section class="section" id="bonuses"><div class="wrap"><div class="bonus"><div class="eyebrow">06 / Exclusive IFS benefits</div><h2>Your registration could open<br/>more doors.</h2><p class="sub">Explore special IFS student benefits and services available to qualifying applicants. Terms and eligibility conditions apply.</p><div class="bonus-grid"><div class="reward"><div class="emoji">🎟️</div><b>Up to 30%</b><span>Exam fee discounts for eligible tests</span></div><div class="reward"><div class="emoji">🛫</div><b>₹25K–₹50K</b><span>Conditional departure support after successful visa</span></div><div class="reward"><div class="emoji">📝</div><b>10 mock tests</b><span>Full-length practice with scoring</span></div><div class="reward"><div class="emoji">🇩🇪</div><b>5 dMAT mocks</b><span>Preparation support where applicable</span></div><div class="reward"><div class="emoji">🏦</div><b>Loan support</b><span>Explore qualifying education loan benefits</span></div><div class="reward"><div class="emoji">💡</div><b>Up to ₹60K</b><span>Potential savings under eligible offers</span></div><div class="reward"><div class="emoji">📃</div><b>SOP support</b><span>Free support for eligible programmes</span></div><div class="reward"><div class="emoji">🎁</div><b>Reimbursements</b><span>Eligible service, travel or accommodation costs</span></div></div><p class="note" style="color:#777765">*Benefits are subject to IFS offer terms, eligibility, programme and qualifying milestones. Registration alone does not guarantee rewards, discounts, reimbursement or savings. Confirm the offer terms before advertising these benefits.</p><a class="btn" href="#register">Register to Explore Benefits ↗</a></div></div></section>
 <section class="section register" id="register">
@@ -596,4 +734,68 @@ const IFS_TOP_ADMITS = [
       });
     });
   })();
-</script></body></html>
+</script><script>
+(function(){
+  const frame=document.getElementById('ifs-review-frame');
+  const original=document.getElementById('ifs-review-original');
+  const clone=document.getElementById('ifs-review-clone');
+  const toggle=document.getElementById('ifs-review-toggle');
+  if(!frame||!original||!clone)return;
+  let paused=false;
+  if(toggle){
+    toggle.addEventListener('click',()=>{
+      paused=!paused;
+      frame.classList.toggle('is-paused',paused);
+      toggle.setAttribute('aria-pressed',String(paused));
+      toggle.setAttribute('aria-label',paused?'Resume scrolling reviews':'Pause scrolling reviews');
+      toggle.textContent=paused?'▶ Resume':'Ⅱ Pause';
+    });
+  }
+  // The site remains functional without this optional API integration.
+  // API key and place ID are stored only as Netlify server-side environment variables.
+  if(location.protocol==='file:')return;
+  const endpoint='/.netlify/functions/ifs-latest-reviews';
+  const requestController=new AbortController();
+  const timeout=setTimeout(()=>requestController.abort(),7000);
+  fetch(endpoint,{signal:requestController.signal})
+  .then(response=>{if(!response.ok)throw Error('Live reviews unavailable');return response.json();})
+  .then(data=>{
+    if(!Array.isArray(data.reviews)||data.reviews.length<2)return;
+    const fallbackLink=document.querySelector('.ifs-reviews-footer a')?.href||'https://www.google.com/maps/search/?api=1&query=IFS%20Abroad%20Education%20Consultants';
+    const render=(container)=>{
+      container.replaceChildren();
+      data.reviews.forEach(review=>{
+        const card=document.createElement('article');card.className='ifs-review-card';
+        const top=document.createElement('div');top.className='ifs-review-top';
+        const avatar=document.createElement('div');avatar.className='ifs-review-avatar';avatar.setAttribute('aria-hidden','true');
+        avatar.textContent=review.author.split(/\s+/).slice(0,2).map(s=>s[0]||'').join('').toUpperCase();
+        const who=document.createElement('div');who.className='ifs-review-who';
+        const author=document.createElement('strong');author.textContent=review.author;
+        const date=document.createElement('span');
+        date.textContent='Google review · '+(review.date||'Date unavailable');
+        who.append(author,date);
+        const google=document.createElement('span');google.className='ifs-review-source';google.textContent='G';google.setAttribute('aria-label','Google');
+        top.append(avatar,who,google);
+        const h=document.createElement('h3');h.textContent='Student experience';
+        const p=document.createElement('p');p.textContent=review.text||'Review text not available';
+        const bottom=document.createElement('div');bottom.className='ifs-review-bottom';
+        const rating=document.createElement('span');rating.textContent=review.rating?`${review.rating} out of 5 stars`:'Verified Google review';
+        const link=document.createElement('a');link.textContent='Google source ↗';link.href=review.url||fallbackLink;link.target='_blank';link.rel='noopener noreferrer';
+        bottom.append(rating,link);card.append(top,h,p,bottom);container.appendChild(card);
+      });
+    };
+    render(original);render(clone);
+    clone.setAttribute('aria-hidden','true');
+    // Keep the source set length symmetrical for seamless right-to-left movement.
+    const status=document.getElementById('ifs-reviews-status');
+    const explainer=document.getElementById('ifs-reviews-explainer');
+    const note=document.getElementById('ifs-reviews-note');
+    if(status)status.textContent='Latest Google reviews (newest first)';
+    if(explainer)explainer.textContent='Showing the '+data.reviews.length+' most recent reviews returned by Google Places';
+    if(note)note.textContent='Reviews loaded from Google Places. Google returns a limited selection of reviews; availability depends on the configured API. Review authors and dates are credited.';
+    if(Number.isFinite(data.rating))document.getElementById('ifs-review-score').innerHTML=data.rating.toFixed(1)+'<span>/5</span>';
+    if(Number.isFinite(data.total))document.getElementById('ifs-review-count').textContent=data.total.toLocaleString('en-IN')+' Google reviews';
+  }).catch(()=>{}).finally(()=>clearTimeout(timeout));
+})();
+</script>
+</body></html>
