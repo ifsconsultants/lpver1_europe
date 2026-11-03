@@ -21,3 +21,7 @@ AFTER DEPLOY:
   1. Open https://YOUR-SITE.netlify.app/thank-you/
   2. In Netlify Forms, enable form detection and verify registration submissions.
   3. Configure Gmail and WhatsApp separately as described in README.md.
+
+
+UPDATED: The hero-section admit cards have been replaced with the 16 new uploaded student cards.
+Hero carousel: the speed selector has been removed. Auto rotation is fixed at Normal (3800 milliseconds per card).

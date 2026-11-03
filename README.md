@@ -1,3 +1,34 @@
+# IFS Europe Virtual Fair – 14 European Destinations (GitHub → Netlify)
+
+## Updated in this version
+- Updated **03 / Your destinations** from 4 to **14 European countries**, in the order you provided.
+- Each country has an **inline SVG flag**: no image link or flag-file dependency.
+- Cards retain the IFS navy/gold styling, with a responsive 4 / 3 / 2 / 1 column grid.
+- Clicking **Explore [Country]** takes students to the form and selects that country.
+- The Netlify Forms country dropdown now includes all 14 countries, plus **Not sure yet**.
+- Event details remain 10 November 2026, 10 AM–5 PM IST.
+- Previous hero admit images, carousel, challenges section, email notifications, WhatsApp server function and thank-you redirect remain in the package.
+
+## Deploy to your GitHub-linked Netlify project
+1. Extract the ZIP and open this folder.
+2. Upload the CONTENTS of this folder to the ROOT of your GitHub repository, preserving `public/`, `netlify/`, and `netlify.toml`.
+3. Commit to the branch Netlify deploys (commonly `main`).
+4. In Netlify, confirm publish directory `public` and functions directory `netlify/functions`; build command should be empty.
+5. When the deploy shows **Published**, check the `/` homepage and `/thank-you/` confirmation path.
+6. Submit a test form and verify it appears under Netlify Forms, then check configured Gmail and WhatsApp alerts.
+
+**Important:** Email notifications require configuring a destination address in Netlify. Automated WhatsApp messages require the approved Meta template, business token, sender ID, and student opt-in. This ZIP does not include secrets.
+
+## Files
+- `public/index.html`: full updated landing page
+- `public/thank-you/index.html`: thank-you route
+- `public/hero-section-embed.html`: standalone admissions hero
+- `public/challenges-section-embed.html`: standalone challenges section
+- `netlify/functions/whatsapp-on-registration.mjs`: WhatsApp function
+- `COUNTRIES_SECTION_SNIPPET.html`: extracted reference markup
+
+---
+
 # IFS Consultants – Europe Virtual Fair 2026: Netlify Lead Form + WhatsApp
 
 Event: 10 November 2026, 10:00 AM to 5:00 PM IST.
@@ -69,3 +100,7 @@ This version fixes a broken form success URL and includes a real directory-index
 - Send a real test registration, then verify it appears in **Forms > ifs-europe-virtual-fair > Verified**. A success page opening alone is not proof of saved submission.
 - Gmail emails require enabling a Form submission email notification in Netlify.
 - WhatsApp requires environment variables, Meta-approved template, opt-in and appropriate Netlify function deployment.
+
+
+## Latest update
+- Replaced the "02 / The solution" section with the new card style shown in the reference screenshot.
