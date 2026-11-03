@@ -104,3 +104,14 @@ This version fixes a broken form success URL and includes a real directory-index
 
 ## Latest update
 - Replaced the "02 / The solution" section with the new card style shown in the reference screenshot.
+
+
+## Student Success - Google Reviews update
+The former placeholder Student Success section has been replaced with four attributed
+summaries of Google reviews publicly syndicated by Trustindex. The website provides
+a link to the Google Business Profile. Reviewer comments are paraphrased, not quotes,
+and the rating displayed (4.9/5, 600+ public reviews) is a static snapshot. Review
+counts and ratings may change. Google API credentials are not included or needed.
+Source: https://www.trustindex.io/reviews/www.ifsconsultants.in
+Note: Publishing real customer names and comments should follow your consent and
+platform policy requirements. Review summaries are not automatically updated.
