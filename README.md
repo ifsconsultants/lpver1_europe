@@ -115,3 +115,7 @@ counts and ratings may change. Google API credentials are not included or needed
 Source: https://www.trustindex.io/reviews/www.ifsconsultants.in
 Note: Publishing real customer names and comments should follow your consent and
 platform policy requirements. Review summaries are not automatically updated.
+
+
+## Trustindex reviews update
+The reviews section now uses the public Trustindex IFS page for its dated scrolling fallback; the Google Places reviews function was removed. For an automatically refreshed Trustindex widget, follow `TRUSTINDEX_WIDGET_SETUP.md` and paste your unique Trustindex widget URL into `public/index.html`.
