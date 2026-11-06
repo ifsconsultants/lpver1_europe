@@ -302,8 +302,8 @@ const IFS_TOP_ADMITS = [
     const rows=parseCsv(s);if(rows.length<2)return;
     const headings=rows[0].map(x=>x.trim().toLowerCase().replace(/[^a-z0-9]/g,''));
     const get=(r,...names)=>{for(const name of names){const idx=headings.indexOf(name);if(idx>=0)return (r[idx]||'').trim()}return ''};
-    const flags={germany:'🇩🇪',france:'🇫🇷',austria:'🇦🇹',ireland:'🇮🇪',uk:'🇬🇧','unitedkingdom':'🇬🇧',usa:'🇺🇸','unitedstates':'🇺🇸',dubai:'🇦🇪',uae:'🇦🇪',singapore:'🇸🇬'};
-    const live=rows.slice(1).map(r=>{const name=get(r,'name','studentname','student');const country=get(r,'country','destination');return {name,university:get(r,'university','universityname'),program:get(r,'program','programme','course'),country,flag:flags[country.toLowerCase().replace(/[^a-z]/g,'')]||'🎓',intake:get(r,'intake','year')||'2026',image:get(r,'cardimage','imageurl','photourl','photo','studentphoto')}}).filter(a=>a.name&&a.university);
+    const flags={germany:'🇩🇪',france:'🇫🇷',austria:'🇦🇹',ireland:'🇮🇪',usa:'🇺🇸','unitedstates':'🇺🇸',dubai:'🇦🇪',uae:'🇦🇪',singapore:'🇸🇬'};
+    const live=rows.slice(1).map(r=>{const name=get(r,'name','studentname','student');const country=get(r,'country','destination');return {name,university:get(r,'university','universityname'),program:get(r,'program','programme','course'),country,flag:flags[country.toLowerCase().replace(/[^a-z]/g,'')]||'🎓',intake:get(r,'intake','year')||'2026',image:get(r,'cardimage','imageurl','photourl','photo','studentphoto')}}).filter(a=>a.name&&a.university&&!['uk','united kingdom'].includes(String(a.country).trim().toLowerCase()));
     if(live.length){admits=live;active=0;populate();startTimer()}
   }).catch(err=>console.warn('Using local admit cards:',err.message));
 })();
