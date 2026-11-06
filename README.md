@@ -1,11 +1,13 @@
-# IFS Europe Virtual Fair – 14 European Destinations (GitHub → Netlify)
+> Updated 5 November 2026: The United Kingdom destination has been removed from all visible landing-page sections and form choices; the fair now lists 13 European destinations. The previously removed UK admission cards remain excluded from the hero.
+
+# IFS Europe Virtual Fair – 13 European Destinations (GitHub → Netlify)
 
 ## Updated in this version
-- Updated **03 / Your destinations** from 4 to **14 European countries**, in the order you provided.
+- Updated **03 / Your destinations** from 4 to **13 European countries**, in the order you provided.
 - Each country has an **inline SVG flag**: no image link or flag-file dependency.
 - Cards retain the IFS navy/gold styling, with a responsive 4 / 3 / 2 / 1 column grid.
 - Clicking **Explore [Country]** takes students to the form and selects that country.
-- The Netlify Forms country dropdown now includes all 14 countries, plus **Not sure yet**.
+- The Netlify Forms country dropdown now includes all 13 countries, plus **Not sure yet**.
 - Event details remain 10 November 2026, 10 AM–5 PM IST.
 - Previous hero admit images, carousel, challenges section, email notifications, WhatsApp server function and thank-you redirect remain in the package.
 

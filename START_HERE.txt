@@ -1,27 +1,12 @@
-IFS Europe Virtual Fair — Thank-you 404 fixed
+IFS EUROPE FAIR: 13 DESTINATIONS, NO UNITED KINGDOM
 
-This is the GitHub-connected Netlify project, not the Netlify Drop folder.
+Use this package with your GitHub-connected Netlify site.
+Upload the CONTENTS of this package to the repository root, preserving the public/ and netlify/ folders.
+Netlify publish directory: public
 
-UPLOAD TO YOUR GITHUB REPOSITORY ROOT:
-  public/
-  netlify/
-  netlify.toml
-  README.md
+The landing page covers Austria, Denmark, Finland, France, Germany, Hungary, Ireland,
+Italy, Netherlands, Poland, Spain, Sweden and Switzerland.
 
-NETLIFY BUILD SETTINGS:
-  Publish directory: public
-  Build command: (blank)
-  Functions directory: netlify/functions
-
-FIXED SUCCESS PAGE:
-  Public URL: /thank-you/
-  Page on disk: public/thank-you/index.html
-
-AFTER DEPLOY:
-  1. Open https://YOUR-SITE.netlify.app/thank-you/
-  2. In Netlify Forms, enable form detection and verify registration submissions.
-  3. Configure Gmail and WhatsApp separately as described in README.md.
-
-
-UPDATED: The hero-section admit cards have been replaced with the 16 new uploaded student cards.
-Hero carousel: the speed selector has been removed. Auto rotation is fixed at Normal (3800 milliseconds per card).
+The student carousel preserves 16 uploaded non-UK admit cards and Normal 3.8s rotation.
+The Trustindex fallback is not a live feed unless your official widget script is configured.
+Gmail form notifications and WhatsApp Cloud API require Netlify/account configuration.
