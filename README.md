@@ -1,6 +1,6 @@
 > Updated 5 November 2026: The United Kingdom destination has been removed from all visible landing-page sections and form choices; the fair now lists 13 European destinations. The previously removed UK admission cards remain excluded from the hero.
 
-# IFS Europe Virtual Fair – 13 European Destinations (GitHub → Netlify)
+# IFS Europe Virtual Education Fair – 13 European Destinations (GitHub → Netlify)
 
 ## Updated in this version
 - Updated **03 / Your destinations** from 4 to **13 European countries**, in the order you provided.
@@ -8,7 +8,7 @@
 - Cards retain the IFS navy/gold styling, with a responsive 4 / 3 / 2 / 1 column grid.
 - Clicking **Explore [Country]** takes students to the form and selects that country.
 - The Netlify Forms country dropdown now includes all 13 countries, plus **Not sure yet**.
-- Event details remain 10 November 2026, 10 AM–5 PM IST.
+- Event details remain 21 November 2026, 10 AM–5 PM IST.
 - Previous hero admit images, carousel, challenges section, email notifications, WhatsApp server function and thank-you redirect remain in the package.
 
 ## Deploy to your GitHub-linked Netlify project
@@ -31,9 +31,9 @@
 
 ---
 
-# IFS Consultants – Europe Virtual Fair 2026: Netlify Lead Form + WhatsApp
+# IFS Consultants – Europe Virtual Education Fair 2026: Netlify Lead Form + WhatsApp
 
-Event: 10 November 2026, 10:00 AM to 5:00 PM IST.
+Event: 21 November 2026, 10:00 AM to 5:00 PM IST.
 
 ## What is already coded
 - Responsive landing page with all 8 admission-card images EMBEDDED in the HTML (no image folder needed).
@@ -58,7 +58,7 @@ IMPORTANT: This is a STATIC deploy. It does not activate automatic WhatsApp mess
 5. Create a WhatsApp Business Platform Cloud API account and configure a production sender number and token.
 6. In WhatsApp Manager, create/approve a **UTILITY** template named `ifs_virtual_fair_confirmation` (language `en_US`). Recommended exact body (one variable):
 
-   Hi {{1}}, we received your registration for the IFS Europe Study Abroad Virtual Fair on 10 November 2026, 10:00 AM–5:00 PM IST. Joining details will be shared before the event. — IFS Consultants
+   Hi {{1}}, we received your registration for the IFS Europe Virtual Education Fair on 21 November 2026, 10:00 AM–5:00 PM IST. Joining details will be shared before the event. — IFS Consultants
 
 7. In Netlify > Site configuration > Environment variables, set:
    - `WA_ACCESS_TOKEN` = your permanent WhatsApp Cloud API token (secret)
