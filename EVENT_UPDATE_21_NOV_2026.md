@@ -6,7 +6,7 @@
 
 **Date:** Saturday, 21 November 2026
 
-**Time retained from previous website:** 10:00 AM–5:00 PM IST. Change this if the revised event has different hours.
+**Confirmed event time:** 10 AM – 1 PM IST.
 
 **Website:** 13 European study destinations; United Kingdom remains removed. 16 rotating non-UK admit cards, registration popup, Netlify form, Trustindex section and new typography are retained.
 

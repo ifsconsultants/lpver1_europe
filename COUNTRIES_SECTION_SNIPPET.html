@@ -1,158 +1,319 @@
-<section class="section" id="countries"><div class="wrap"><div class="intro"><div class="eyebrow">03 / Your destinations</div><h2>One Europe.<br/>13 destinations to explore.</h2><p class="sub">Now each country box uses a realistic landmark-based preview so students can quickly connect with the destination before they register.</p></div><div class="countries" aria-label="13 European study destinations">
-<article class="destination destination-13" data-country="Austria" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/austria.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Austria landmark image showing Schönbrunn Palace, Vienna">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Austria</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Vienna</span>
-    <div class="thumb-landmark"><div><strong>Vienna</strong><small>Schönbrunn Palace, Vienna</small></div></div>
+<!-- Country styles are in <style id='ifs-13-destinations-style'> inside public/index.html. -->
+<style id="ifs-13-destinations-style">
+/* IFS European destinations: premium-minimal editorial cards */
+#countries{background:linear-gradient(180deg,#f7f9fc 0%,#ffffff 72%)}
+#countries .intro{max-width:790px;margin-bottom:34px}
+#countries .intro .eyebrow{color:#926900;font-weight:800;letter-spacing:.15em}
+#countries .intro h2{font-family:"Plus Jakarta Sans",sans-serif;color:#10253f;letter-spacing:-.055em}
+#countries .intro .sub{max-width:690px;color:#607083}
+#countries .countries{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:stretch}
+#countries .destination-13{
+  position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;
+  padding:0;border:1px solid #e4e9ef;border-radius:19px;overflow:hidden;
+  isolation:isolate;background:#fff;color:#10253f;
+  box-shadow:0 8px 26px rgba(14,37,63,.055);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease
+}
+#countries .destination-13::before,#countries .destination-13:before{display:none!important}
+#countries .destination-13:hover,#countries .destination-13:focus-within{
+  transform:translateY(-4px);border-color:#d9c69b;box-shadow:0 18px 44px rgba(11,37,63,.13)
+}
+#countries .destination-thumb{position:relative;height:184px;min-height:184px;overflow:hidden;background:#274968}
+#countries .destination-thumb img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
+  filter:saturate(.96) contrast(1.03);
+  transition:transform .45s ease
+}
+#countries .destination-13:hover .destination-thumb img{transform:scale(1.04)}
+#countries .destination-thumb::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(7,26,46,.35) 0%,rgba(7,26,46,.04) 34%,rgba(4,21,38,.88) 100%);
+  pointer-events:none
+}
+#countries .destination-chip{
+  position:absolute;top:16px;left:16px;z-index:2;
+  display:inline-flex;align-items:center;gap:7px;
+  font:800 10px/1 "Manrope",sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:#fff;text-shadow:0 1px 8px #041b32a0;
+  padding:0;background:transparent;border:0;border-radius:0;box-shadow:none
+}
+#countries .destination-chip::before{content:"";width:15px;height:2px;border-radius:2px;background:#f8c21c}
+#countries .thumb-landmark{
+  position:absolute;z-index:2;left:17px;right:17px;bottom:16px;color:#fff;
+  display:flex;flex-direction:column;gap:6px;text-shadow:0 2px 10px #071b32a6
+}
+#countries .thumb-landmark strong{
+  display:block;margin:0;color:#fff;font:800 clamp(21px,2.1vw,27px)/1.06 "Plus Jakarta Sans",sans-serif;
+  letter-spacing:-.045em
+}
+#countries .thumb-landmark small{
+  display:block;color:#e7eef5;font:500 11px/1.4 "Manrope",sans-serif;
+  letter-spacing:.01em;white-space:normal
+}
+#countries .destination-body{
+  display:flex;flex:1;flex-direction:column;gap:15px;padding:20px 18px 18px;
+}
+#countries .destination-body p{
+  margin:0;min-height:56px;flex:1;color:#53677b;
+  font:500 12px/1.55 "Manrope",sans-serif
+}
+#countries .destination-13 a{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  width:100%;margin-top:auto;padding:14px 0 0;
+  border-top:1px solid #ecf0f4;color:#153e63;text-decoration:none;
+  font:800 11px/1.2 "Manrope",sans-serif;letter-spacing:.01em
+}
+#countries .destination-13 a .explore-arrow{
+  display:grid;place-items:center;flex-shrink:0;width:29px;height:29px;
+  border:1px solid #ebdfbc;border-radius:50%;background:#fffaf0;color:#9c7100;
+  font:700 17px/1 "Manrope",sans-serif;transition:background .22s ease,color .22s ease
+}
+#countries .destination-13 a:hover .explore-arrow,
+#countries .destination-13 a:focus-visible .explore-arrow{background:#f8c21c;color:#10253f}
+@media(min-width:1091px){#countries .destination-13:last-child{grid-column:2/span 2;justify-self:center;width:calc(50% - 10px)}}
+@media(min-width:761px) and (max-width:1090px){#countries .destination-13:last-child{grid-column:2}}
+@media(max-width:1090px){#countries .countries{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){#countries .countries{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}#countries .destination-thumb{height:166px;min-height:166px}}
+@media(max-width:550px){
+  #countries .countries{grid-template-columns:1fr;gap:16px}
+  #countries .destination-thumb{height:200px;min-height:200px}
+  #countries .thumb-landmark strong{font-size:26px}
+  #countries .destination-body{padding:18px}
+  #countries .destination-body p{min-height:0;font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+  #countries .destination-13,#countries .destination-thumb img,#countries .destination-13 a .explore-arrow{transition:none}
+}
+</style>
+<section class="section" id="countries">
+<div class="wrap">
+  <div class="intro">
+    <div class="eyebrow">03 / Your destinations</div>
+    <h2>One Europe.<br>13 destinations to explore.</h2>
+    <p class="sub">Discover your ideal study destination. Compare universities, courses, costs and opportunities across 13 European countries.</p>
+  </div>
+  <div class="countries" aria-label="13 European study destinations">
+<article class="destination destination-13" data-country="Austria">
+  <div class="destination-thumb">
+    <img src="assets/countries/austria.jpg" alt="Schönbrunn Palace in Vienna, Austria" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 01</span>
+    <div class="thumb-landmark">
+      <strong>Austria</strong>
+      <small>Schönbrunn Palace · Vienna</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Austria</h3><span class="destination-index">01 / 13</span></div>
-    <p>Explore classic universities, research-driven programmes and a high-quality student lifestyle in Austria.</p>
-    <a href="#register" aria-label="Explore Austria registration options">Explore Austria <span aria-hidden="true">↗</span></a>
+    <p>Explore research-led universities and creative study pathways.</p>
+    <a href="#register" aria-label="Explore Austria and register for the Europe Virtual Education Fair">
+      <span>Explore Austria</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Denmark" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/denmark.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Denmark landmark image showing Nyhavn, Copenhagen">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Denmark</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Copenhagen</span>
-    <div class="thumb-landmark"><div><strong>Copenhagen</strong><small>Nyhavn, Copenhagen</small></div></div>
+<article class="destination destination-13" data-country="Denmark">
+  <div class="destination-thumb">
+    <img src="assets/countries/denmark.jpg" alt="Nyhavn Waterfront in Copenhagen, Denmark" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 02</span>
+    <div class="thumb-landmark">
+      <strong>Denmark</strong>
+      <small>Nyhavn Waterfront · Copenhagen</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Denmark</h3><span class="destination-index">02 / 13</span></div>
-    <p>Discover innovation-led study options with strengths in design, engineering and sustainability.</p>
-    <a href="#register" aria-label="Explore Denmark registration options">Explore Denmark <span aria-hidden="true">↗</span></a>
+    <p>Discover design, engineering and sustainability programmes.</p>
+    <a href="#register" aria-label="Explore Denmark and register for the Europe Virtual Education Fair">
+      <span>Explore Denmark</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Finland" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/finland.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Finland landmark image showing Helsinki Cathedral">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Finland</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Helsinki</span>
-    <div class="thumb-landmark"><div><strong>Helsinki</strong><small>Helsinki Cathedral</small></div></div>
+<article class="destination destination-13" data-country="Finland">
+  <div class="destination-thumb">
+    <img src="assets/countries/finland.jpg" alt="Helsinki Cathedral in Helsinki, Finland" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 03</span>
+    <div class="thumb-landmark">
+      <strong>Finland</strong>
+      <small>Helsinki Cathedral · Helsinki</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Finland</h3><span class="destination-index">03 / 13</span></div>
-    <p>Learn about Finland’s student-friendly education system, technology focus and quality of life.</p>
-    <a href="#register" aria-label="Explore Finland registration options">Explore Finland <span aria-hidden="true">↗</span></a>
+    <p>Explore technology, innovation and student-centred education.</p>
+    <a href="#register" aria-label="Explore Finland and register for the Europe Virtual Education Fair">
+      <span>Explore Finland</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="France" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/france.jpg')">
-  <div class="destination-thumb" role="img" aria-label="France landmark image showing Paris streets & Eiffel Tower">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> France</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Paris</span>
-    <div class="thumb-landmark"><div><strong>Paris</strong><small>Paris streets & Eiffel Tower</small></div></div>
+<article class="destination destination-13" data-country="France">
+  <div class="destination-thumb">
+    <img src="assets/countries/france.jpg" alt="Eiffel Tower in Paris, France" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 04</span>
+    <div class="thumb-landmark">
+      <strong>France</strong>
+      <small>Eiffel Tower · Paris</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>France</h3><span class="destination-index">04 / 13</span></div>
-    <p>Find leading opportunities in business, luxury, design, hospitality and applied learning.</p>
-    <a href="#register" aria-label="Explore France registration options">Explore France <span aria-hidden="true">↗</span></a>
+    <p>Discover business, luxury, design and specialised programmes.</p>
+    <a href="#register" aria-label="Explore France and register for the Europe Virtual Education Fair">
+      <span>Explore France</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Germany" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/germany.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Germany landmark image showing Brandenburg Gate, Berlin">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Germany</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Berlin</span>
-    <div class="thumb-landmark"><div><strong>Berlin</strong><small>Brandenburg Gate, Berlin</small></div></div>
+<article class="destination destination-13" data-country="Germany">
+  <div class="destination-thumb">
+    <img src="assets/countries/germany.jpg" alt="Brandenburg Gate in Berlin, Germany" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 05</span>
+    <div class="thumb-landmark">
+      <strong>Germany</strong>
+      <small>Brandenburg Gate · Berlin</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Germany</h3><span class="destination-index">05 / 13</span></div>
-    <p>Popular for engineering, management and applied sciences with globally respected pathways.</p>
-    <a href="#register" aria-label="Explore Germany registration options">Explore Germany <span aria-hidden="true">↗</span></a>
+    <p>Explore public universities and applied-science programmes.</p>
+    <a href="#register" aria-label="Explore Germany and register for the Europe Virtual Education Fair">
+      <span>Explore Germany</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Hungary" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/hungary.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Hungary landmark image showing Hungarian Parliament, Budapest">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Hungary</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Budapest</span>
-    <div class="thumb-landmark"><div><strong>Budapest</strong><small>Hungarian Parliament, Budapest</small></div></div>
+<article class="destination destination-13" data-country="Hungary">
+  <div class="destination-thumb">
+    <img src="assets/countries/hungary.jpg" alt="Hungarian Parliament in Budapest, Hungary" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 06</span>
+    <div class="thumb-landmark">
+      <strong>Hungary</strong>
+      <small>Hungarian Parliament · Budapest</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Hungary</h3><span class="destination-index">06 / 13</span></div>
-    <p>Affordable European education with strong options in medicine, business and engineering.</p>
-    <a href="#register" aria-label="Explore Hungary registration options">Explore Hungary <span aria-hidden="true">↗</span></a>
+    <p>Compare affordable options in medicine, business and STEM.</p>
+    <a href="#register" aria-label="Explore Hungary and register for the Europe Virtual Education Fair">
+      <span>Explore Hungary</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Ireland" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/ireland.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Ireland landmark image showing Trinity College Dublin">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Ireland</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Dublin</span>
-    <div class="thumb-landmark"><div><strong>Dublin</strong><small>Trinity College Dublin</small></div></div>
+<article class="destination destination-13" data-country="Ireland">
+  <div class="destination-thumb">
+    <img src="assets/countries/ireland.jpg" alt="Trinity College Dublin in Dublin, Ireland" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 07</span>
+    <div class="thumb-landmark">
+      <strong>Ireland</strong>
+      <small>Trinity College Dublin · Dublin</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Ireland</h3><span class="destination-index">07 / 13</span></div>
-    <p>An English-speaking destination known for tech, business, life sciences and career outcomes.</p>
-    <a href="#register" aria-label="Explore Ireland registration options">Explore Ireland <span aria-hidden="true">↗</span></a>
+    <p>Discover English-taught programmes and industry pathways.</p>
+    <a href="#register" aria-label="Explore Ireland and register for the Europe Virtual Education Fair">
+      <span>Explore Ireland</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Italy" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/italy.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Italy landmark image showing Colosseum, Rome">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Italy</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Rome</span>
-    <div class="thumb-landmark"><div><strong>Rome</strong><small>Colosseum, Rome</small></div></div>
+<article class="destination destination-13" data-country="Italy">
+  <div class="destination-thumb">
+    <img src="assets/countries/italy.jpg" alt="Colosseum in Rome, Italy" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 08</span>
+    <div class="thumb-landmark">
+      <strong>Italy</strong>
+      <small>Colosseum · Rome</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Italy</h3><span class="destination-index">08 / 13</span></div>
-    <p>A strong choice for design, architecture, management and creative academic experiences.</p>
-    <a href="#register" aria-label="Explore Italy registration options">Explore Italy <span aria-hidden="true">↗</span></a>
+    <p>Explore architecture, design, management and research.</p>
+    <a href="#register" aria-label="Explore Italy and register for the Europe Virtual Education Fair">
+      <span>Explore Italy</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Netherlands" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/netherlands.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Netherlands landmark image showing Amsterdam Canals">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Netherlands</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Amsterdam</span>
-    <div class="thumb-landmark"><div><strong>Amsterdam</strong><small>Amsterdam Canals</small></div></div>
+<article class="destination destination-13" data-country="Netherlands">
+  <div class="destination-thumb">
+    <img src="assets/countries/netherlands.jpg" alt="Canal Houses in Amsterdam, Netherlands" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 09</span>
+    <div class="thumb-landmark">
+      <strong>Netherlands</strong>
+      <small>Canal Houses · Amsterdam</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Netherlands</h3><span class="destination-index">09 / 13</span></div>
-    <p>International classrooms, English-taught courses and modern, practical education pathways.</p>
-    <a href="#register" aria-label="Explore Netherlands registration options">Explore Netherlands <span aria-hidden="true">↗</span></a>
+    <p>Find international programmes and practical learning.</p>
+    <a href="#register" aria-label="Explore Netherlands and register for the Europe Virtual Education Fair">
+      <span>Explore Netherlands</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Poland" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/poland.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Poland landmark image showing Kraków Market Square">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Poland</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Kraków</span>
-    <div class="thumb-landmark"><div><strong>Kraków</strong><small>Kraków Market Square</small></div></div>
+<article class="destination destination-13" data-country="Poland">
+  <div class="destination-thumb">
+    <img src="assets/countries/poland.jpg" alt="Historic Market Square in Kraków, Poland" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 10</span>
+    <div class="thumb-landmark">
+      <strong>Poland</strong>
+      <small>Historic Market Square · Kraków</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Poland</h3><span class="destination-index">10 / 13</span></div>
-    <p>Value-focused study options across engineering, management, health and emerging specialisations.</p>
-    <a href="#register" aria-label="Explore Poland registration options">Explore Poland <span aria-hidden="true">↗</span></a>
+    <p>Compare value-focused degrees across multiple disciplines.</p>
+    <a href="#register" aria-label="Explore Poland and register for the Europe Virtual Education Fair">
+      <span>Explore Poland</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Spain" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/spain.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Spain landmark image showing Sagrada Família, Barcelona">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Spain</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Barcelona</span>
-    <div class="thumb-landmark"><div><strong>Barcelona</strong><small>Sagrada Família, Barcelona</small></div></div>
+<article class="destination destination-13" data-country="Spain">
+  <div class="destination-thumb">
+    <img src="assets/countries/spain.jpg" alt="Sagrada Família in Barcelona, Spain" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 11</span>
+    <div class="thumb-landmark">
+      <strong>Spain</strong>
+      <small>Sagrada Família · Barcelona</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Spain</h3><span class="destination-index">11 / 13</span></div>
-    <p>Known for business, hospitality, design and a vibrant student experience in global cities.</p>
-    <a href="#register" aria-label="Explore Spain registration options">Explore Spain <span aria-hidden="true">↗</span></a>
+    <p>Explore business, hospitality, design and technology.</p>
+    <a href="#register" aria-label="Explore Spain and register for the Europe Virtual Education Fair">
+      <span>Explore Spain</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Sweden" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/sweden.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Sweden landmark image showing Gamla Stan, Stockholm">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Sweden</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Stockholm</span>
-    <div class="thumb-landmark"><div><strong>Stockholm</strong><small>Gamla Stan, Stockholm</small></div></div>
+<article class="destination destination-13" data-country="Sweden">
+  <div class="destination-thumb">
+    <img src="assets/countries/sweden.jpg" alt="Gamla Stan in Stockholm, Sweden" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 12</span>
+    <div class="thumb-landmark">
+      <strong>Sweden</strong>
+      <small>Gamla Stan · Stockholm</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Sweden</h3><span class="destination-index">12 / 13</span></div>
-    <p>Innovation-driven education with strengths in engineering, sustainability and research.</p>
-    <a href="#register" aria-label="Explore Sweden registration options">Explore Sweden <span aria-hidden="true">↗</span></a>
+    <p>Discover innovation, sustainability and research-led study.</p>
+    <a href="#register" aria-label="Explore Sweden and register for the Europe Virtual Education Fair">
+      <span>Explore Sweden</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-<article class="destination destination-13" data-country="Switzerland" style="--thumb:linear-gradient(135deg,rgba(20,61,99,.12),rgba(20,61,99,.12)), url('assets/countries/switzerland.jpg')">
-  <div class="destination-thumb" role="img" aria-label="Switzerland landmark image showing Swiss Old Town & Alps">
-    <span class="destination-chip"><span class="material-symbols-outlined" aria-hidden="true">travel_explore</span> Switzerland</span>
-    <span class="destination-uni"><span class="material-symbols-outlined" aria-hidden="true">location_on</span> Zürich / Lucerne</span>
-    <div class="thumb-landmark"><div><strong>Zürich / Lucerne</strong><small>Swiss Old Town & Alps</small></div></div>
+<article class="destination destination-13" data-country="Switzerland">
+  <div class="destination-thumb">
+    <img src="assets/countries/switzerland.jpg" alt="Swiss Old Town &amp; Alps in Lucerne, Switzerland" loading="lazy" decoding="async" width="640" height="420">
+    <span class="destination-chip">DESTINATION 13</span>
+    <div class="thumb-landmark">
+      <strong>Switzerland</strong>
+      <small>Swiss Old Town &amp; Alps · Lucerne</small>
+    </div>
   </div>
   <div class="destination-body">
-    <div class="destination-meta"><h3>Switzerland</h3><span class="destination-index">13 / 13</span></div>
-    <p>Premium study options in hospitality, business, research and precision-focused education.</p>
-    <a href="#register" aria-label="Explore Switzerland registration options">Explore Switzerland <span aria-hidden="true">↗</span></a>
+    <p>Explore hospitality, business and research pathways.</p>
+    <a href="#register" aria-label="Explore Switzerland and register for the Europe Virtual Education Fair">
+      <span>Explore Switzerland</span>
+      <span class="explore-arrow" aria-hidden="true">↗</span>
+    </a>
   </div>
 </article>
-</div></div></section>
+  </div>
+</div>
+</section>
