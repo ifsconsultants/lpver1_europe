@@ -1,3 +1,7 @@
+# Direct Google Reviews update
+
+The old review integration is replaced by a direct Google API backend. Follow `GOOGLE_REVIEWS_DIRECT_SETUP.md` for current Google Business Profile or Places API credentials and Netlify configuration.
+
 > Updated 5 November 2026: The United Kingdom destination has been removed from all visible landing-page sections and form choices; the fair now lists 13 European destinations. The previously removed UK admission cards remain excluded from the hero.
 
 # IFS Europe Virtual Education Fair – 13 European Destinations (GitHub → Netlify)

@@ -1,0 +1,15 @@
+# Google Business Profile mode (all reviews in pages of 50):
+GOOGLE_BP_CLIENT_ID=
+GOOGLE_BP_CLIENT_SECRET=
+GOOGLE_BP_REFRESH_TOKEN=
+GOOGLE_BP_ACCOUNT_ID=
+GOOGLE_BP_LOCATION_ID=
+# For accurate Google Maps links; confirm the place ID first:
+GOOGLE_PLACE_ID=
+
+# Or simpler Google Places API mode (maximum 5):
+# GOOGLE_PLACES_API_KEY=
+# GOOGLE_PLACE_ID=
+
+# Add these in Netlify > Site configuration > Environment variables.
+# Never add real credentials to a public repo or HTML.
