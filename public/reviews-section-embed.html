@@ -93,11 +93,19 @@ h1,h2,h3,h4,h5,h6{font-family:var(--ifs-font-heading)}
 .solution-meta .material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:500;font-size:16px;letter-spacing:normal;text-transform:none;vertical-align:middle;color:#bf8c05}
 @media(max-width:590px){#fair-title .highlight{font-size:inherit}}
 </style>
-</head><body><section class="section ifs-reviews-section" id="success" aria-labelledby="ifs-reviews-title">
+<style id="ifs-live-trustindex-visibility">
+/* Show a working review list while Trustindex initializes. Display the native widget when ready. */
+#success .ifs-trustindex-widget.is-loaded { width: min(1180px, calc(100% - 30px)); margin: 10px auto 28px; padding: 0; }
+#success.ifs-has-live-reviews .ifs-reviews-rating { display:none; }
+#success.ifs-has-live-reviews .ifs-reviews-header { grid-template-columns: 1fr; }
+#success.ifs-has-live-reviews #ifs-review-toggle { display:none; }
+#success .ifs-trustindex-widget.is-loaded .ti-widget { max-width:100%; }
+#success #ifs-reviews-fallback[hidden] { display:none!important; }
+</style></head><body><section class="section ifs-reviews-section" id="success" aria-labelledby="ifs-reviews-title">
  <div class="wrap">
   <div class="ifs-reviews-header">
    <div>
-    <div class="eyebrow">05 / Student success · Trustindex reviews</div>
+    <div class="eyebrow">05 / Student success · Google reviews via Trustindex</div>
     <h2 id="ifs-reviews-title">Real experiences.<br><span>Real student voices.</span></h2>
     <p class="sub">Hear from students about university applications, counselling and visa preparation.</p>
    </div>
@@ -109,7 +117,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--ifs-font-heading)}
    </div>
   </div>
  </div>
- <div class="ifs-trustindex-widget" id="ifs-trustindex-widget" aria-label="Trustindex student reviews"></div>
+ <div class="ifs-trustindex-widget" id="ifs-trustindex-widget" aria-label="Live Google reviews provided by Trustindex"><script defer async src='https://cdn.trustindex.io/loader.js?6a24f1b85df741992166b33191b'></script></div>
 <div class="ifs-marquee-bleed" id="ifs-reviews-fallback">
   <div class="ifs-marquee-frame" id="ifs-review-frame" aria-label="Student reviews scrolling from right to left">
    <div class="ifs-review-track" id="ifs-review-track">
@@ -226,73 +234,75 @@ h1,h2,h3,h4,h5,h6{font-family:var(--ifs-font-heading)}
  </div>
  <div class="wrap ifs-reviews-after">
   <div class="ifs-reviews-status-row">
-   <div><strong id="ifs-reviews-status">Recent reviews on Trustindex</strong><br>
-    <span id="ifs-reviews-explainer">Newest visible on Trustindex: 16 Aug 2025</span></div>
+   <div><strong id="ifs-reviews-status">Older review highlights</strong><br>
+    <span id="ifs-reviews-explainer">Older published reviews · dated</span></div>
    <button class="ifs-review-toggle" id="ifs-review-toggle" type="button" aria-pressed="false" aria-label="Pause scrolling reviews">Ⅱ Pause</button>
   </div>
   <div class="ifs-reviews-footer">
-    <p id="ifs-reviews-note">These attributed summaries reflect reviews visible on the public Trustindex page, with dates shown. The public listing may lag behind Google. Add your official Trustindex widget code for updates managed by Trustindex.</p>
-    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=IFS%20Abroad%20Education%20Consultants&query_place_id=ChIJr3X5mSNDOToRz2NjesxklVI" target="_blank" rel="noopener noreferrer">Read Reviews on Trustindex ↗</a>
+    <p id="ifs-reviews-note">Showing dated review highlights while Trustindex loads. Once loaded, reviews display according to your Trustindex widget settings.</p>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=IFS%20Abroad%20Education%20Consultants&query_place_id=ChIJr3X5mSNDOToRz2NjesxklVI" target="_blank" rel="noopener noreferrer">Read Google Reviews ↗</a>
   </div>
  </div>
-</section><script>
-/* Trustindex integration.
-   Paste the official script URL from Trustindex → Widget Configurator → Save and get code.
-   Example format: https://cdn.trustindex.io/loader.js?YOUR_UNIQUE_WIDGET_ID
-   A blank URL keeps the dated, source-attributed Trustindex fallback marquee visible. */
-(function(){
-  const TRUSTINDEX_WIDGET_URL = '';
-  const frame = document.getElementById('ifs-review-frame');
-  const original = document.getElementById('ifs-review-original');
-  const clone = document.getElementById('ifs-review-clone');
-  const toggle = document.getElementById('ifs-review-toggle');
+</section><script id="ifs-trustindex-live-state">
+(function () {
   const mount = document.getElementById('ifs-trustindex-widget');
   const fallback = document.getElementById('ifs-reviews-fallback');
+  const section = document.getElementById('success');
   const status = document.getElementById('ifs-reviews-status');
   const explainer = document.getElementById('ifs-reviews-explainer');
   const note = document.getElementById('ifs-reviews-note');
+  const toggle = document.getElementById('ifs-review-toggle');
+  const frame = document.getElementById('ifs-review-frame');
+  if (!mount || !fallback) return;
 
-  if (!frame || !original || !clone) return;
+  // Keep the existing archived, right-to-left marquee if the live CDN widget fails.
   let paused = false;
-  if (toggle) toggle.addEventListener('click', () => {
+  if (toggle && frame) toggle.addEventListener('click', function () {
     paused = !paused;
-    frame.classList.toggle('is-paused',paused);
+    frame.classList.toggle('is-paused', paused);
     toggle.setAttribute('aria-pressed', String(paused));
     toggle.setAttribute('aria-label', paused ? 'Resume scrolling reviews' : 'Pause scrolling reviews');
     toggle.textContent = paused ? '▶ Resume' : 'Ⅱ Pause';
   });
 
-  const widgetUrl = TRUSTINDEX_WIDGET_URL.trim();
-  if (!/^https:\/\/cdn\.trustindex\.io\/loader\.js\?[A-Za-z0-9_-]+$/i.test(widgetUrl) || !mount) return;
+  function hasRenderedWidget() {
+    // Script insertion by itself isn't evidence that a vendor widget is visible.
+    const widgets = mount.querySelectorAll('iframe,.ti-widget,.ti-widget-container,[class*="ti-review"],[class*="trustindex"]');
+    for (const widget of widgets) {
+      if (widget.offsetWidth > 0 || widget.offsetHeight > 0 || widget.querySelector('iframe,.ti-review-item')) return true;
+    }
+    return false;
+  }
 
-  // Official Trustindex HTML embed structure, no Google Places key or API calls.
-  const widgetHolder = document.createElement('div');
-  widgetHolder.setAttribute('data-src', widgetUrl);
-  mount.append(widgetHolder);
-  let activated = false;
-  const reveal = () => {
-    if (activated) return;
-    const ready = mount.querySelector('iframe,.ti-widget,[class*="ti-widget"],[class*="ti-review"]') ||
-      (widgetHolder.querySelectorAll('div').length > 4 && widgetHolder.textContent.trim().length > 30);
-    if (!ready) return;
-    activated = true;
+  function showLive() {
+    if (mount.classList.contains('is-loaded')) return;
     mount.classList.add('is-loaded');
+    if (section) section.classList.add('ifs-has-live-reviews');
     fallback.hidden = true;
     if (toggle) toggle.hidden = true;
-    if (status) status.textContent = 'Reviews from Trustindex';
-    if (explainer) explainer.textContent = 'Live widget provided by Trustindex';
-    if (note) note.textContent = 'Reviews are displayed and refreshed by Trustindex. Review availability and update frequency depend on your widget configuration.';
+    if (status) status.textContent = 'Google reviews · Trustindex widget';
+    if (explainer) explainer.textContent = 'Reviews update on Trustindex’s sync schedule';
+    if (note) note.textContent = 'Google-sourced reviews are provided by Trustindex. Review order, count and autoplay depend on your Trustindex widget settings.';
+  }
+
+  if (status) status.textContent = 'Connecting to Trustindex reviews…';
+  const observer = new MutationObserver(function () {
+    if (hasRenderedWidget()) {
+      showLive();
+      observer.disconnect();
+    }
+  });
+  observer.observe(mount, {childList:true, subtree:true, attributes:true, attributeFilter:['class','style','src']});
+
+  // If script finishes before this handler is attached, still recognize it.
+  if (hasRenderedWidget()) { showLive(); observer.disconnect(); }
+
+  const vendorScript = mount.querySelector('script[src^="https://cdn.trustindex.io/loader.js?"]');
+  if (vendorScript) vendorScript.addEventListener('error', function () {
     observer.disconnect();
-  };
-  const observer = new MutationObserver(reveal);
-  observer.observe(mount, {subtree: true, childList: true, characterData: true});
-  const loader = document.createElement('script');
-  loader.src = 'https://cdn.trustindex.io/loader.js';
-  loader.async = true;
-  loader.defer = true;
-  loader.onerror = () => observer.disconnect(); // Keep the existing carousel visible.
-  document.head.appendChild(loader);
-  setTimeout(() => { reveal(); observer.disconnect(); }, 12000);
+    if (status) status.textContent = 'Review highlights · archived';
+    if (explainer) explainer.textContent = 'Live widget could not be loaded';
+  });
 })();
 </script>
 </body></html>
