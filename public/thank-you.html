@@ -14,4 +14,30 @@ h1,h2,h3,h4,h5,h6{font-family:var(--ifs-font-heading)}
 .solution-meta .material-symbols-outlined{font-family:'Material Symbols Outlined';font-weight:500;font-size:16px;letter-spacing:normal;text-transform:none;vertical-align:middle;color:#bf8c05}
 @media(max-width:590px){#fair-title .highlight{font-size:inherit}}
 </style>
-</head><body><main class="card"><div class="tick">✓</div><h1>Registration received!</h1><p>Thank you for registering for the <strong>IFS Europe Virtual Education Fair 2026</strong>. Our team will share the online joining instructions before the event.</p><div class="info">21 November 2026 • 10:00 AM–5:00 PM IST<br>13 European study destinations</div><p class="sm">If you opted in, you may also receive WhatsApp event confirmation after messaging is configured. Your registration does not depend on WhatsApp delivery.</p><a href="/">Back to the fair page →</a><p class="sm">IFS Consultants • Call / WhatsApp +91 7036319256</p></main></body></html>
+<!-- OpenAI Ads Measurement Pixel -->
+<script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"HWxCCbtGVLNUsPpzb1jvyj",debug:true});</script>
+
+<script id="ifs-pixel-page-view">
+  oaiq("measure", "page_viewed", {type:"contents"});
+</script>
+</head><body><main class="card"><div class="tick">✓</div><h1>Registration received!</h1><p>Thank you for registering for the <strong>IFS Europe Virtual Education Fair 2026</strong>. Our team will share the online joining instructions before the event.</p><div class="info">21 November 2026 • 10:00 AM–5:00 PM IST<br>13 European study destinations</div><p class="sm">If you opted in, you may also receive WhatsApp event confirmation after messaging is configured. Your registration does not depend on WhatsApp delivery.</p><a href="/">Back to the fair page →</a><p class="sm">IFS Consultants • Call / WhatsApp +91 7036319256</p></main>
+<script id="ifs-pixel-registration-confirmed">
+(function () {
+  /* Only count conversions after a form submission reaches this confirmation page. */
+  try {
+    var key = "ifs_fair_registration_pending";
+    var raw = sessionStorage.getItem(key);
+    if (!raw) return;
+    sessionStorage.removeItem(key);  // Prevent refresh or repeat visits from double counting.
+    var payload = JSON.parse(raw);
+    var age = Date.now() - Number(payload.timestamp);
+    if (!payload.id || !Number.isFinite(age) || age < 0 || age > 20 * 60 * 1000) return;
+    oaiq("measure", "registration_completed",
+      { type: "customer_action" },
+      { event_id: payload.id });
+  } catch (e) {
+    /* Pixel failures must not affect the registration confirmation page. */
+  }
+})();
+</script>
+</body></html>
