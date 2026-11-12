@@ -13,7 +13,7 @@
 .ifs-marquee-bleed:before{left:0;background:linear-gradient(90deg,#f3f6fc,transparent)}
 .ifs-marquee-bleed:after{right:0;background:linear-gradient(270deg,#f1f5fb,transparent)}
 .ifs-marquee-frame{overflow:hidden;padding:9px 0 18px}
-.ifs-review-track{display:flex;width:max-content;animation:ifs-review-marquee 60s linear infinite;will-change:transform}
+.ifs-review-track{display:flex;width:max-content;animation:ifs-review-marquee 135s linear infinite;will-change:transform}
 .ifs-review-group{display:flex;align-items:stretch;gap:16px;padding-right:16px;flex-shrink:0}
 @keyframes ifs-review-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .ifs-marquee-frame:hover .ifs-review-track,.ifs-marquee-frame:focus-within .ifs-review-track,.ifs-marquee-frame.is-paused .ifs-review-track{animation-play-state:paused}
@@ -34,7 +34,7 @@
 .ifs-review-toggle:focus-visible{outline:3px solid #f8c21c}.ifs-reviews-footer{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:22px}
 .ifs-reviews-footer p{max-width:720px;font-size:11px;color:#708195;line-height:1.65;margin:0}
 .ifs-reviews-footer .btn{flex-shrink:0;padding:13px 18px}
-@media(max-width:650px){.ifs-reviews-header{grid-template-columns:1fr;gap:20px}.ifs-reviews-rating{width:min(100%,280px)}.ifs-review-card{width:280px;min-height:322px}.ifs-reviews-footer{flex-direction:column;align-items:flex-start;gap:16px}.ifs-review-track{animation-duration:70s}.ifs-marquee-bleed:before,.ifs-marquee-bleed:after{width:16px}}
+@media(max-width:650px){.ifs-reviews-header{grid-template-columns:1fr;gap:20px}.ifs-reviews-rating{width:min(100%,280px)}.ifs-review-card{width:280px;min-height:322px}.ifs-reviews-footer{flex-direction:column;align-items:flex-start;gap:16px}.ifs-review-track{animation-duration:135s}.ifs-marquee-bleed:before,.ifs-marquee-bleed:after{width:16px}}
 @media(prefers-reduced-motion:reduce){.ifs-review-track{animation:none}.ifs-marquee-frame{overflow-x:auto;scroll-snap-type:x proximity}.ifs-review-card{scroll-snap-align:start}}
 
 
@@ -42,8 +42,18 @@
 
 /* Live Trustindex widget opens below the continuously looping review highlights. */
 #success .ifs-marquee-bleed{display:block!important}
-#success .ifs-review-track{display:flex!important;animation:ifs-review-marquee 60s linear infinite}
+#success .ifs-review-track{display:flex!important;animation:ifs-review-marquee 135s linear infinite}
 #success .ifs-marquee-frame.is-paused .ifs-review-track{animation-play-state:paused}
+/* Hovering anywhere over the scrolling review band pauses the marquee in place.
+   A specific selector is necessary because #success .ifs-review-track declares
+   the animation shorthand, which otherwise overrides the earlier hover CSS. */
+#success .ifs-marquee-bleed:hover .ifs-review-track,
+#success .ifs-marquee-frame:hover .ifs-review-track,
+#success .ifs-marquee-frame:focus-within .ifs-review-track,
+#success .ifs-marquee-frame.is-paused .ifs-review-track{
+  animation-play-state:paused!important;
+}
+
 #success .ifs-native-review-wrap{margin-top:16px}
 #success .ifs-native-review-details{border:1px solid #dbe5ee;border-radius:16px;background:#fff;padding:13px 18px;color:#143d63}
 #success .ifs-native-review-details summary{cursor:pointer;font-size:12px;font-weight:800;line-height:1.6;list-style:none}

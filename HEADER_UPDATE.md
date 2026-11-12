@@ -3,7 +3,7 @@
 - Preserves the existing blue navigation bar, links, logo and Register Free button.
 - Makes the top announcement scroll right to left, in a single line, with the exact message:
 
-  Europe Virtual Edu Fair | 21st November 2026 | Talk with 13 Countries University Representatives Online
+  Europe Virtual Edu Fair | 28th November 2026 | Talk with 13 Countries University Representatives Online
 
 - Reduces the logo box border radius from 13px to 6px.
 - Pauses the ticker on hover, and respects reduced-motion accessibility settings.

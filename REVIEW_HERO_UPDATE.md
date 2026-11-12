@@ -20,7 +20,7 @@ The images are preserved without cropping, recoloring or retouching, and encoded
 - Removed unused Google API reviews functions and client scripts from this package; Trustindex provides the live review data now.
 
 ## Still preserved
-13 European countries, multi-country registration, official logo in popup, event on 21 Nov 2026 10 AM–1 PM IST, Netlify Forms, WhatsApp group confirmation, OpenAI Ads pixel, right-side support tabs.
+13 European countries, multi-country registration, official logo in popup, event on 28 Nov 2026 10 AM–1 PM IST, Netlify Forms, WhatsApp group confirmation, OpenAI Ads pixel, right-side support tabs.
 
 ## Deploy
 Upload the contents of the ZIP to your GitHub repository root; Netlify publish directory is `public`.
